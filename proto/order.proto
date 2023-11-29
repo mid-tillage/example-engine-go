@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package order;
+option go_package = "example-engine-go/order";
+
+message Product {
+  string name = 1;
+  int32 quantity = 2;
+  float unit_price = 3;
+  float unit_discount = 4;
+  float total_price = 5;
+  float total_discount = 6;
+  float sku = 7;
+}
+
+message Payment {
+  string type = 1;
+  float amount = 2;
+}
+
+message Order {
+  string company = 1;
+  Payment payment = 2;
+  repeated Product products = 3;
+}
